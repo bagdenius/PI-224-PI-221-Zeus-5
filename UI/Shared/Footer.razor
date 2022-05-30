@@ -1,0 +1,70 @@
+﻿@namespace UI.Shared
+
+@inject NavigationManager navigationManager
+
+<style>
+	div {
+		display: block;
+	}
+
+	.logo_text {
+    text-decoration: none;
+    position: initial;
+    top: 0px;
+    left: 0px;
+    font-family: "Days";
+    font-size: 12pt;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+}
+
+	b {
+		font-weight: bold;
+	}
+
+	.logo_text b {
+		font-size: 24pt;
+		font-weight: normal;
+	}
+</style>
+
+<footer class="text-muted">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 px-3">
+					<img src="@navigationManager.BaseUri/img/naulogowithtext.png" width=370/>
+				<p class="my-5">
+					Міністерство освіти і науки України. Національний авіаційний університет.
+					Факультет кібербезпеки, комп'ютерної та програмної інженерії.
+					Кафедра інженерії програмного забезпечення.
+				</p>
+			</div>
+			<div class="col-md-6 px-3">
+				<h3>Інформація</h3>
+				<p class="mt-3">
+					Даний сайт є результатом роботи студентів НАУ над курсовою роботою на тему
+					"База резюме та вакансій", 5 варіант, групи 224 та 221.
+					Розробено студентами команди Zeus: Бондаренко Богдан Сергійович, Велігоша Володимир Юрійович, Хвещук Сергій Богданович
+				</p>
+			</div>
+			<div class="col-md-2 px-3">
+				<h3 class="mb-3">Соціальні мережі</h3>
+				<div class="mt-3">
+					<a href="/" class="mx-1">
+						<img src="/img/icons/facebook.svg" alt="facebook" width="30" />
+					</a>
+					<a href="/" class="mx-1">
+						<img src="/img/icons/twitter.svg" alt="twitter" width="30" />
+					</a>
+					<a href="/" class="mx-1">
+						<img src="/img/icons/instagram.svg" alt="instagram" width="30" />
+					</a>
+					<a href="/" class="mx-1">
+						<img src="/img/icons/youtube.svg" alt="youtube" width="30" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

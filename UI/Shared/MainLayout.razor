@@ -1,0 +1,61 @@
+﻿@namespace UI.Shared
+
+@inherits LayoutComponentBase
+
+<header>
+    <nav>
+        <a href="/employer" class="btn d-none d-md-block">Панель роботодавця</a>
+        <a href="/applicant" class="btn d-none d-md-block">Панель працівника</a>
+
+        <a class="navbar-brand" href="/">
+            <img src="img/naulogo.png" alt="logo" style="height: 12vh;">
+        </a>
+
+        <a href="/faqs" class="btn d-none d-md-block">Запитання і відповіді</a>
+        <a href="https://nau.edu.ua/" class="btn d-none d-md-block">Національний авіаційний університет</a>
+
+    </nav>
+</header>
+
+<div class="page">
+    <div class="main">
+        <div class="shadow px-4">
+            <LoginDisplay />
+        </div>
+
+
+        <div class="cover-container" style="height: 400px;">
+            <div class="cover">
+                <div style="display: flex;justify-content: center;">
+
+                    <div class="row" style="height: 350px;width: 800px;">
+                        <div class="col my-auto">
+                            <h1 class="display-5">
+                                <span style="font-size:22px;">Сайт
+                                    <span style="font-weight:800;">#1</span> 
+                                для пошуку роботи від</span>
+                             команди Zeus
+                            </h1>
+                        </div>
+                        <div class="col d-none d-md-block cover-image">
+                            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_5i9kyklo.json"
+                                background="transparent" speed="1"
+                                style="width: 400px; height: 400px;position:absolute;" loop autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content container px-4">
+            @Body
+        </div>
+
+    </div>
+</div>
+
+
+<Footer />
