@@ -77,7 +77,7 @@ Global
 		{09C72E21-FA87-409D-9E03-8CCBBAC5A453} = {4F7CF08B-DE4B-474F-A80F-1EEE609D9291}
 		{3606C1F6-8707-4272-84B3-98155881F834} = {00A17599-63B8-4037-A6C5-7E0E443E61E0}
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {69D493BF-E69E-4BFB-8A0B-1ADE0FD6E454}
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
-EndGlobal
