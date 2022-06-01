@@ -68,7 +68,7 @@ namespace UI.Controllers
             //                          $"{application.JobListing.JobTitle}," +
             //                          $"{application.JobListing.ListingDate}," +
             //                          $"{application.JobListing.EmployerId}";
-            var applications = await _jobApplicationService.GetAsync();
+            var applications = await _jobApplicationService.GetStringsAsync();
 
             if (applications == null)
                 return NoContent();

@@ -45,8 +45,11 @@ namespace Repositories
             return jobs;
         }
 
-        public async Task<Vacancy> Get(string id) =>
+        public async Task<Vacancy> GetAsync(string id) =>
             await _context.Vacancies.FirstOrDefaultAsync(v => v.Id == id);
+
+        public Vacancy Get(string id) =>
+            _context.Vacancies.AsNoTracking().FirstOrDefault(v => v.Id == id);
 
         public async Task Add(Vacancy jobListing) =>
             await _context.Vacancies.AddAsync(jobListing);
@@ -56,9 +59,8 @@ namespace Repositories
 
         public async Task Remove(string id)
         {
-            var jobListing = await Get(id);
+            var jobListing = await GetAsync(id);
             _context.Vacancies.Remove(jobListing);
-            await _context.SaveChangesAsync();
         }
     }
 }

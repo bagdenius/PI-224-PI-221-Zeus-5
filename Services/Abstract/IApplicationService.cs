@@ -9,7 +9,7 @@ namespace UI.Services.Abstract
         Task<IEnumerable<ApplicationModel>> FindByUserId(string userId);
         Task<ApplicationModel> Get(string id);
         IEnumerable<ApplicationModel> Get();
-        Task<IEnumerable<string>> GetAsync();
+        Task<IEnumerable<string>> GetStringsAsync();
         Task Update(ApplicationModel application);
     }
 }

@@ -12,18 +12,21 @@ namespace Repositories
             _context = context;
 
         public async Task<IEnumerable<Application>> GetAsync() =>
-            await _context.Applications.Include(p => p.Vacancy).ToListAsync();
+            await _context.Applications.AsNoTracking().Include(p => p.Vacancy).ToListAsync();
 
         public IEnumerable<Application> Get() =>
-             _context.Applications.Include(p => p.Vacancy);
+             _context.Applications.AsNoTracking().Include(p => p.Vacancy);
 
-		public async Task<IEnumerable<Application>> FindByUserId(string userid) =>
-			from application in await GetAsync()
-			where application.ApplicantId == userid
-			select application;
+        public async Task<IEnumerable<Application>> FindByUserId(string userid) =>
+            from application in await GetAsync()
+            where application.ApplicantId == userid
+            select application;
 
-		public async Task<Application> Get(string id) =>
-            await _context.Applications.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
+        public async Task<Application> GetAsync(string id) =>
+            await _context.Applications/*.AsNoTracking()*/.FirstOrDefaultAsync(v => v.Id == id);
+
+        public Application Get(string id) =>
+            _context.Applications.AsNoTracking().FirstOrDefault(a => a.Id == id);
 
         public async Task Add(Application jobApplication) =>
             await _context.Applications.AddAsync(jobApplication);
@@ -34,7 +37,7 @@ namespace Repositories
         public bool CheckApplication(string userid, string jobid)
         {
             var jobApplications = from application in Get()
-                                  where application.Vacancy.Id == jobid 
+                                  where application.Vacancy.Id == jobid
                                   && application.ApplicantId == userid
                                   select application;
             return jobApplications.Any();
