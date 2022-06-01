@@ -11,19 +11,19 @@
 	<h1 class="display-6 py-5">Переглянути за категоріями</h1>
 
 	<div class="sector-container">
-		<div class="card shadow sector-card" @onclick="() => SelectSectorAsync(sectors[0])">
+		<div class="card shadow sector-card" @onclick="() => SelectSectorAsync(Sector.FinancialActivities.GetDisplayName())">
 			<img src="/img/sectors/finance.png" class="rounded border-1 p-2" />
 			<h4 class="text-muted">Фінансова діяльність</h4>
 		</div>
-		<div class="card shadow sector-card" @onclick="() => SelectSectorAsync(sectors[1])">
+		<div class="card shadow sector-card" @onclick="() => SelectSectorAsync(Sector.InformationSystems.GetDisplayName())">
 			<img src="/img/sectors/it.png" class="rounded border-1 p-2" />
 			<h4 class="text-muted">Інформаційні технології</h4>
 		</div>
-		<div class="card shadow sector-card" @onclick="() => SelectSectorAsync(sectors[2])">
+		<div class="card shadow sector-card" @onclick="() => SelectSectorAsync(Sector.Media.GetDisplayName())">
 			<img src="/img/sectors/social-media.png" class="rounded border-1 p-2" />
 			<h4 class="text-muted">Медіа та інтернет</h4>
 		</div>
-		<div class="card shadow sector-card" @onclick="() => SelectSectorAsync(sectors[3])">
+		<div class="card shadow sector-card" @onclick="() => SelectSectorAsync(Sector.EngineeringAndProduction.GetDisplayName())">
 			<img src="/img/sectors/manufacturing.png" class="rounded border-1 p-2" />
 			<h4 class="text-muted">Інжиніринг та виробництво</h4>
 		</div>
@@ -32,7 +32,7 @@
 
 
 <div class="text-center">
-	<h1 class="display-6 py-5">Знайдіть ідеальну роботу для себе</h1>
+	<h1 class="display-6 py-5">Знайдіть роботу своєї мрії</h1>
 
 	<div class="input-group mb-3">
 		<select class="form-control form-control-lg" @onchange="(e) => SelectSectorAsync(e.Value.ToString())">
@@ -96,54 +96,6 @@ else
 	private ClaimsPrincipal principal;
 	private string SearchString;
 	private bool loading = false;
-
-	private List<String> sectors = new List<String>
-	{
-	  "Фінансова діяльність",
-	  "Інформаційні технології",
-	  "Медіа та інтернет",
-	  "Інжиніринг та виробництво",
-	  "Побутове обслуговування",
-	  "Медицина",
-	  "Юриспруденція",
-	  "Промисловість",
-	  "Малий та середній бізнес",
-	  "Наука",
-	  "Культура",
-	  "Соціально-психологічна діяльність",
-	  "Мистецтво та прикладна творчість",
-	  "Інформаційні системи",
-	  "Армія та силові структури",
-	  "Морська справа",
-	  "Транспорт",
-	  "Державна служба (чиновники)",
-	  "Житлово-комунальне господарство",
-	  "Сільське господарство",
-	  "Інспекторські служби",
-	  "Політика та громадська діяльність",
-	  "Будівництво",
-	  "Електротехніка",  
-	  "Освіта та виховання",
-	  "Торгівля",
-	  "Менеджмент (управління)",	  
-	  "Енергетика",
-	  "Хімія та біологія",
-	  "Засоби масової інформації",
-	  "Видобуток та переробка копалин",
-	  "Аналітична діяльність та прогнозування",
-	  "Природокористування (екологія та охорона)",
-	  "Адміністрація",
-	  "Туризм, відпочинок, подорожі",
-	  "Спорт",
-	  "Розважальний та шоу-бізнес",
-	  "Металообробка",
-	  "Лісне господарство",
-	  "Деревообробка",
-	  "Виробництво продуктів харчування",
-	  "Моделювання та виробництво одягу та взуття",
-	  "Поліграфія та рекламна справа",
-	  "Громадське харчування та ресторанний бізнес"
-	};
 
 	protected override async Task OnInitializedAsync()
 	{

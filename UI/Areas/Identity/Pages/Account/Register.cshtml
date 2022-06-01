@@ -30,7 +30,7 @@
 
             <div class="mb-3">
                 <label asp-for="Input.Sector"></label>
-                <select asp-for="Input.Sector" class="form-control" placeholder="*IT Sector">
+                <select asp-for="Input.Sector" class="form-control" placeholder="*Інформаційні технології">
                     @foreach(Enum value in Enum.GetValues(typeof(Sector)))
                     {
                         <option>@value.GetDisplayName()</option>

@@ -1,14 +1,32 @@
 ﻿@namespace UI.Shared
-
+@attribute [Authorize]
 @inherits LayoutComponentBase
+
+<style>
+    .center-img {
+  display: block;
+  margin: 0 auto;
+}
+</style>
 
 <header>
     <nav>
-        <a href="/employer" class="btn d-none d-md-block">Панель роботодавця</a>
-        <a href="/applicant" class="btn d-none d-md-block">Панель працівника</a>
+        @if (user.IsInRole("Employer"))
+        {
+            <a href="/employer" class="btn d-none d-md-block">Панель роботодавця</a>
+        }
+        @if (user.IsInRole("Applicant"))
+        {
+            <a href="/applicant" class="btn d-none d-md-block">Панель працівника</a>
+        }
+        @if (user.IsInRole("Admin"))
+        {
+            <a href="/admin" class="btn d-none d-md-block">Панель адміністратора</a>
+        }
+        <a href="/profile" class="btn d-none d-md-block">Профіль</a>
 
-        <a class="navbar-brand" href="/">
-            <img src="img/naulogo.png" alt="logo" style="height: 12vh;">
+        <a class="navbar-brand-c align-content-center" href="/">
+            <img src="img/naulogo.png" alt="img" style="height: 12vh;">
         </a>
 
         <a href="/faqs" class="btn d-none d-md-block">Запитання і відповіді</a>
@@ -59,3 +77,14 @@
 
 
 <Footer />
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    private ClaimsPrincipal user;
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = (await authenticationStateTask).User;
+    }
+}
