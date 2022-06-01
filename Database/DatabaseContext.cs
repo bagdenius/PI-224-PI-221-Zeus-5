@@ -11,10 +11,10 @@ namespace Database
         public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
         {
-			//Database.EnsureDeleted();
-			//Database.EnsureCreated();
-			//this.Seed();
-		}
+            //Database.EnsureDeleted();
+            //Database.EnsureCreated();
+            this.Seed();
+        }
 
         public DbSet<Vacancy> Vacancies { get; set; }
         public DbSet<Application> Applications { get; set; }

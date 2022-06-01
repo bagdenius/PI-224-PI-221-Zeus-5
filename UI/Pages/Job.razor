@@ -1,5 +1,5 @@
 @page "/job/{jobid}"
-
+@attribute [Authorize]
 @inject UserManager<User> userManager
 @inject SignInManager<User> signInManager
 @inject VacancyService jobListingService

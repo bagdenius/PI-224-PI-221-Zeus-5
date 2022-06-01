@@ -51,16 +51,16 @@ namespace Repositories
         public Vacancy Get(string id) =>
             _context.Vacancies.AsNoTracking().FirstOrDefault(v => v.Id == id);
 
-        public async Task Add(Vacancy jobListing) =>
-            await _context.Vacancies.AddAsync(jobListing);
+        public async Task Add(Vacancy vacancy) =>
+            await _context.Vacancies.AddAsync(vacancy);
 
-        public async Task Update(Vacancy jobListing) =>
-            _context.Vacancies.Update(jobListing);
+        public async Task Update(Vacancy vacancy) =>
+            _context.Vacancies.Update(vacancy);
 
         public async Task Remove(string id)
         {
-            var jobListing = await GetAsync(id);
-            _context.Vacancies.Remove(jobListing);
+            var vacancy = await GetAsync(id);
+            _context.Vacancies.Remove(vacancy);
         }
     }
 }
