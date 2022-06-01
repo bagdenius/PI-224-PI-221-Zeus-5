@@ -19,7 +19,7 @@ namespace BLL.Tests.Application
 
             // Act
             // Assert
-            Assert.True(service.CheckApplicationAsync(UserId, VacancyId));
+            Assert.True(service.CheckApplication(UserId, VacancyId));
         }
 
         [Fact]
@@ -32,7 +32,7 @@ namespace BLL.Tests.Application
 
             // Act
             // Assert
-            Assert.False(service.CheckApplicationAsync(UserId, VacancyId));
+            Assert.False(service.CheckApplication(UserId, VacancyId));
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace BLL.Tests.Application
 
             // Act
             // Assert
-            Assert.Throws<NotFoundException>(() => service.CheckApplicationAsync(UserId, VacancyId));
+            Assert.Throws<NotFoundException>(() => service.CheckApplication(UserId, VacancyId));
         }
 
         [Fact]
@@ -58,7 +58,8 @@ namespace BLL.Tests.Application
 
             // Act
             // Assert
-            Assert.Throws<NotFoundException>(() => service.CheckApplicationAsync(UserId, VacancyId));
+            Assert.Throws<NotFoundException>(() => 
+            service.CheckApplication(UserId, VacancyId));
         }
     }
 }

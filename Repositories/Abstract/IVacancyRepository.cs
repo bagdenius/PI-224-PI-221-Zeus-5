@@ -6,7 +6,8 @@ namespace Repositories.Abstract
     {
         Task Add(Vacancy vacancy);
         Task Remove(string id);
-        Task<Vacancy> Get(string id);
+        Task<Vacancy> GetAsync(string id);
+        Vacancy Get(string id);
         Task<IEnumerable<Vacancy>> Get();
         Task<IEnumerable<Vacancy>> GetByUserId(string userId);
         Task<IEnumerable<Vacancy>> GetTopVacancies(int count);

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BLL.Models;
 using DAL.Entities;
+using Services.Exceptions;
 using UI.Services.Abstract;
 using UnitOfWorkSpace.Abstract;
 
@@ -32,7 +33,10 @@ namespace UI.Services
 
         public async Task<IEnumerable<VacancyModel>> GetByUserId(string userId)
         {
-            return _mapper.Map<IEnumerable<VacancyModel>>(await _unitOfWork.Vacancies.GetByUserId(userId));
+            if (await _unitOfWork.Users.GetAsync(userId) == null)
+                throw new NotFoundException(nameof(User), userId);
+            return _mapper.Map<IEnumerable<VacancyModel>>(
+                await _unitOfWork.Vacancies.GetByUserId(userId));
         }
 
         public async Task<IList<VacancyModel>> Search(string query)
@@ -40,35 +44,44 @@ namespace UI.Services
             return _mapper.Map<IList<VacancyModel>>(await _unitOfWork.Vacancies.Search(query));
         }
 
-        public async Task<VacancyModel> Get(string id)
+        public async Task<VacancyModel> Get(string Id)
         {
-            return _mapper.Map<VacancyModel>(await _unitOfWork.Vacancies.Get(id));
+            var vacancy = await _unitOfWork.Vacancies.GetAsync(Id);
+            if (vacancy == null)
+                throw new NotFoundException(nameof(Vacancy), Id);
+            return _mapper.Map<VacancyModel>(vacancy);
         }
 
         public async Task Add(VacancyModel vacancy)
         {
+            if (await _unitOfWork.Users.GetAsync(vacancy.EmployerId) == null)
+                throw new NotFoundException(nameof(User), vacancy.EmployerId);
             await _unitOfWork.Vacancies.Add(_mapper.Map<Vacancy>(vacancy));
             await _unitOfWork.SaveAsync();
         }
 
         public async Task Update(VacancyModel vacancy)
         {
-            var updateObj = await _unitOfWork.Vacancies.Get(vacancy.Id);
+            if (await _unitOfWork.Users.GetAsync(vacancy.EmployerId) == null)
+                throw new NotFoundException(nameof(User), vacancy.EmployerId);
+            var updateObj = await _unitOfWork.Vacancies.GetAsync(vacancy.Id);
             updateObj.Id = vacancy.Id;
             updateObj.Title = vacancy.Title;
-            updateObj.Picture=vacancy.Picture;
+            updateObj.Picture = vacancy.Picture;
             updateObj.Description = vacancy.Description;
             updateObj.Location = vacancy.Location;
             updateObj.Sector = vacancy.Sector;
             updateObj.EmployerId = vacancy.EmployerId;
             updateObj.CreationDate = vacancy.CreationDate;
-            updateObj.Applications = _mapper.Map<List<Application>>(vacancy.Applications);
             await _unitOfWork.SaveAsync();
         }
 
-        public async Task Remove(string id)
+        public async Task Remove(string Id)
         {
-            await _unitOfWork.Vacancies.Remove(id);
+            var vacancy = _unitOfWork.Vacancies.Get(Id);
+            if (vacancy == null)
+                throw new NotFoundException(nameof(Vacancy), Id);
+            await _unitOfWork.Vacancies.Remove(Id);
             await _unitOfWork.SaveAsync();
         }
     }
