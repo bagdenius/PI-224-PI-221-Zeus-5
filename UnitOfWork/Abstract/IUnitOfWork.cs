@@ -6,6 +6,7 @@ namespace UnitOfWorkSpace.Abstract
     {
         IApplicationRepository Applications { get; }
         IVacancyRepository Vacancies { get; }
+        IUserRepository Users { get; }
         Task SaveAsync();
     }
 }
