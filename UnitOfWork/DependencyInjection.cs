@@ -13,6 +13,7 @@ namespace UnitOfWorkSpace
         {
             services.AddTransient<IApplicationRepository, ApplicationRepository>();
             services.AddTransient<IVacancyRepository, VacancyRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             services.AddDbContext<DatabaseContext>(options =>
