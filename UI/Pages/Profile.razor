@@ -1,6 +1,4 @@
 @page "/profile"
-@using DAL.Entities.Addons
-@using DAL.Entities.Enums
 @using UI.Extensions
 @attribute [Authorize]
 
@@ -38,8 +36,9 @@ else
 			</div>
 
 			<div class="mb-3">
-				<label class="form-label">Опис</label>
-				<textarea @bind="user.Bio" type="text" class="form-control" placeholder="Додайте опис">
+				<label class="form-label">Додаткова інформація</label>
+				<textarea @bind="user.Bio" type="text" class="form-control" 
+				placeholder="Заповніть додаткову інформацію про себе">
 																																																		</textarea>
 			</div>
 		</div>

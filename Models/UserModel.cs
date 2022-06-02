@@ -1,12 +1,11 @@
-﻿using DAL;
-using DAL.Entities;
+﻿using Entities.Enums;
 using Microsoft.AspNetCore.Identity;
 
 namespace Models
 {
     public class UserModel
     {
-        public Roles Role { get; set; }
+        public Role Role { get; set; }
 
         [PersonalData]
         public string FullName { get; set; }

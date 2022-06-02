@@ -1,4 +1,4 @@
-﻿namespace DAL.Entities
+﻿namespace Entities
 {
     public class Application
     {

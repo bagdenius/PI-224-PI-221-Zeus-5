@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using DAL.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace UI.Areas.Identity.Pages.Account
 {
@@ -85,7 +85,6 @@ namespace UI.Areas.Identity.Pages.Account
                     return Page();
                 }
             }
-
             return Page();
         }
     }

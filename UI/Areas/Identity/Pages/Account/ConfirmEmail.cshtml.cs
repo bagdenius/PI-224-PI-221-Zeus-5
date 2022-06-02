@@ -1,11 +1,10 @@
-﻿using System.Text;
-using DAL;
-using DAL.Entities;
+﻿using Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using System.Text;
 
 namespace UI.Areas.Identity.Pages.Account
 {
@@ -37,7 +36,7 @@ namespace UI.Areas.Identity.Pages.Account
 
             code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code));
             var result = await _userManager.ConfirmEmailAsync(user, code);
-            StatusMessage = result.Succeeded ? "Електронну адресу було підтверджено." 
+            StatusMessage = result.Succeeded ? "Електронну адресу було підтверджено."
                 : "При підтвердженні електронної адреси відбулась помилка";
             return Page();
         }

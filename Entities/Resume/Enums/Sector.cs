@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DAL.Entities.Enums
+namespace Entities.Enums
 {
     public enum Sector
     {
@@ -29,7 +29,7 @@ namespace DAL.Entities.Enums
         Industry,
 
         [Display(Name = "Малий та середній бізнес")]
-        SmallAndMediumBusiness,  
+        SmallAndMediumBusiness,
 
         [Display(Name = "Наука")]
         Science,

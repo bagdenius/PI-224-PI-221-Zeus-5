@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DAL.Entities
+namespace Entities.Enums
 {
-    public enum Roles
+    public enum Role
     {
-        [Display(Name ="Адміністратор")]
+        [Display(Name = "Адміністратор")]
         Admin,
 
         [Display(Name = "Працівник")]

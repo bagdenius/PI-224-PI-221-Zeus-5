@@ -1,16 +1,13 @@
-﻿using BLL.Models;
-using BLL.Tests.Common;
+﻿using BLL.Tests.Common;
 using Microsoft.EntityFrameworkCore;
+using Models;
+using Services;
 using Services.Exceptions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using UI.Services;
 using Xunit;
 
-namespace BLL.Tests.Application
+namespace BLL.Tests.ApplicationTests
 {
     public class UpdateApplicationTests : UnitOfWorkMock
     {
@@ -56,10 +53,10 @@ namespace BLL.Tests.Application
             // Act
             // Assert
             await Assert.ThrowsAsync<NotFoundException>(async () =>
-            await service.Update(new ApplicationModel 
-            { 
+            await service.Update(new ApplicationModel
+            {
                 ApplicantId = ApplicantId,
-                VacancyId = VacancyId 
+                VacancyId = VacancyId
             }));
         }
     }

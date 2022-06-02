@@ -1,8 +1,7 @@
-﻿using DAL.Entities;
-using DAL.Entities.Addons;
+﻿using Entities.Addons;
 using System.ComponentModel.DataAnnotations;
 
-namespace DAL
+namespace Entities
 {
     public class Resume
     {

@@ -1,13 +1,13 @@
-﻿using BLL.Models;
-using BLL.Tests.Common;
+﻿using BLL.Tests.Common;
 using Microsoft.EntityFrameworkCore;
+using Models;
+using Services;
 using Services.Exceptions;
 using System;
 using System.Threading.Tasks;
-using UI.Services;
 using Xunit;
 
-namespace BLL.Tests.Vacancy
+namespace BLL.Tests.VacancyTests
 {
     public class AddVacancyTests : UnitOfWorkMock
     {

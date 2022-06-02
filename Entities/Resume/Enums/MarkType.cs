@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DAL.Entities.Enums
+namespace Entities.Enums
 {
     public enum MarkType
     {
-        [Display(Name ="П'ятибальна (коледжна)")]
+        [Display(Name = "П'ятибальна (коледжна)")]
         FivePoint,
 
         [Display(Name = "Семибальна (GPA)")]

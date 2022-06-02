@@ -1,6 +1,6 @@
-﻿using DAL;
+﻿using Entities;
+using Entities.Enums;
 using Microsoft.AspNetCore.Identity;
-using DAL.Entities;
 
 namespace Database
 {
@@ -43,7 +43,7 @@ namespace Database
                     new()
                     {
                         Id = "7BB8A621-4BAF-4536-A642-4DFC855236EA",
-                        Role = Roles.Admin,
+                        Role = Role.Admin,
                         FullName = "Адміністратор",
                         Bio = "Admin",
                         Sector = "Admin",

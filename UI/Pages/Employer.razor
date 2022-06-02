@@ -1,11 +1,10 @@
 ﻿@page "/employer"
-@using DAL.Entities.Enums
 @using UI.Extensions
 @attribute [Authorize(Roles = "Employer")]
 
-@inject UserManager<User> _userManager
-@inject VacancyService _vacancyService
-@inject ApplicationService _applicationService
+@inject UserManager<User> userManager
+@inject IVacancyService vacancyService
+@inject IApplicationService applicationService
 
 <div class="text-center my-5">
 	<h1 class="display-6">Додані вами вакансії</h1>
@@ -221,15 +220,19 @@ else
 		loading = true;
 
 		vacancy = new VacancyModel();
-		user = await _userManager.GetUserAsync((await authenticationStateTask).User);
-		vacancies = await _vacancyService.GetByUserId(user.Id);
+		user = await userManager.GetUserAsync((await authenticationStateTask).User);
+
+		vacancies = await vacancyService.GetByUserId(user.Id);
+
+
+
 
 		loading = false;
 	}
 
 	private async Task AddVacancy()
 	{
-		await _vacancyService.Add(new VacancyModel
+		await vacancyService.Add(new VacancyModel
 			{
 				Id = Guid.NewGuid().ToString(),
 				Title = vacancy.Title,
@@ -244,19 +247,19 @@ else
 
 	private async Task RemoveVacancy(string id)
 	{
-		await _vacancyService.Remove(id);
+		await vacancyService.Remove(id);
 		await OnInitializedAsync();
 	}
 
 	private async Task UpdateVacancy(VacancyModel job)
 	{
-		await _vacancyService.Update(job);
+		await vacancyService.Update(job);
 	}
 
 	private async Task ApproveAsync(ApplicationModel application)
 	{
 		application.IsApproved = true;
-		await _applicationService.Update(application);
+		await applicationService.Update(application);
 	}
 
 	private async Task OnInputFileChange(InputFileChangeEventArgs e)

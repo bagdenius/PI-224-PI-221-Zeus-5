@@ -1,13 +1,13 @@
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using System.Text.Encodings.Web;
-using DAL;
-using DAL.Entities;
+using Entities;
+using Entities.Enums;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Text.Encodings.Web;
 
 namespace UI.Areas.Identity.Pages.Account
 {
@@ -41,15 +41,17 @@ namespace UI.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required(ErrorMessage ="Введіть ім'я та прізвище представника")]
-            [DataType(DataType.Text, ErrorMessage ="Ім'я або прізвище було введено некоректно")]
+            [Required(ErrorMessage = "Введіть ім'я та прізвище представника")]
+            [DataType(DataType.Text, ErrorMessage = "Ім'я або прізвище було введено некоректно")]
             [Display(Name = "Ім'я та прізвище представника")]
             public string FullName { get; set; }
 
+            [Required(ErrorMessage ="Введіть назву компанії")]
             [Display(Name = "Назва компанії")]
             [DataType(DataType.Text)]
             public string Organisation { get; set; }
 
+            [Required(ErrorMessage ="Оберіть сферу праці")]
             [Display(Name = "Сфера праці")]
             [DataType(DataType.Text)]
             public string Sector { get; set; }
@@ -58,12 +60,13 @@ namespace UI.Areas.Identity.Pages.Account
             [DataType(DataType.MultilineText)]
             public string Bio { get; set; }
 
+            [Required(ErrorMessage ="Оберіть кількість працівників")]
             [Display(Name = "Кількість працівників")]
-            [DataType(DataType.Text)]
+            [DataType(DataType.Text, ErrorMessage ="Кількість працівників обрано некоректно")]
             public string EmployeesCount { get; set; }
 
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage ="Введіть електронну адресу")]
+            [EmailAddress(ErrorMessage ="Електронну адресу введено некоректно")]
             [Display(Name = "Електронна адреса")]
             public string Email { get; set; }
 
@@ -97,7 +100,7 @@ namespace UI.Areas.Identity.Pages.Account
                 {
                     Id = userid,
                     FullName = Input.FullName,
-                    Role = Roles.Employer,
+                    Role = Role.Employer,
                     Organisation = Input.Organisation,
                     UserName = Input.Email,
                     Email = Input.Email,

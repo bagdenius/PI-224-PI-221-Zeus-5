@@ -1,12 +1,12 @@
 using Database;
-using UI.Areas.Identity;
-using UI.Services;
+using Entities;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Services;
+using UI.Areas.Identity;
+using UI.WebServices;
 using UnitOfWorkSpace;
-using DAL.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 

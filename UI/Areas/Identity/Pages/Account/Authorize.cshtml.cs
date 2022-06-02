@@ -1,13 +1,13 @@
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+using Entities;
+using Entities.Enums;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 using System.Text.Encodings.Web;
-using DAL;
-using DAL.Entities;
 
 namespace UI.Areas.Identity.Pages.Account
 {
@@ -21,10 +21,10 @@ namespace UI.Areas.Identity.Pages.Account
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger<AuthorizeModel> _logger;
-        
-        public AuthorizeModel(UserManager<User> userManager, 
+
+        public AuthorizeModel(UserManager<User> userManager,
             SignInManager<User> signInManager,
-            RoleManager<IdentityRole> roleManager, 
+            RoleManager<IdentityRole> roleManager,
             ILogger<AuthorizeModel> logger,
             IEmailSender emailSender)
         {
@@ -37,8 +37,8 @@ namespace UI.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required(ErrorMessage ="¬вед≥ть ≥м'€ та пр≥звище")]
-            [DataType(DataType.Text, ErrorMessage ="≤м'€ або пр≥звище було введено некоректно")]
+            [Required(ErrorMessage = "¬вед≥ть ≥м'€ та пр≥звище")]
+            [DataType(DataType.Text, ErrorMessage = "≤м'€ або пр≥звище було введено некоректно")]
             [Display(Name = "≤м'€ та пр≥звище")]
             public string FullName { get; set; }
 
@@ -46,15 +46,15 @@ namespace UI.Areas.Identity.Pages.Account
             //[DataType(DataType.Text, ErrorMessage ="ќрган≥зац≥€ була введена некоректно")]
             //public string Organisation { get; set; }
 
-            [Required(ErrorMessage ="¬вед≥ть електронну адресу")]
-            [EmailAddress(ErrorMessage ="≈лектронна адреса введена некоректно")]
+            [Required(ErrorMessage = "¬вед≥ть електронну адресу")]
+            [EmailAddress(ErrorMessage = "≈лектронна адреса введена некоректно")]
             [Display(Name = "≈лектронна адреса")]
             public string Email { get; set; }
 
-            [Required(ErrorMessage ="¬вед≥ть пароль")]
-            [MinLength(6, ErrorMessage ="ѕароль не може бути менше 6 символ≥в")]
-            [MaxLength(100, ErrorMessage ="ѕароль не може бути б≥льше 100 символ≥в")]
-            [DataType(DataType.Password, ErrorMessage ="ѕароль введено некоректно")]
+            [Required(ErrorMessage = "¬вед≥ть пароль")]
+            [MinLength(6, ErrorMessage = "ѕароль не може бути менше 6 символ≥в")]
+            [MaxLength(100, ErrorMessage = "ѕароль не може бути б≥льше 100 символ≥в")]
+            [DataType(DataType.Password, ErrorMessage = "ѕароль введено некоректно")]
             [Display(Name = "ѕароль")]
             public string Password { get; set; }
 
@@ -72,7 +72,7 @@ namespace UI.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync()
         {
-                var userid = Guid.NewGuid().ToString();
+            var userid = Guid.NewGuid().ToString();
 
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace UI.Areas.Identity.Pages.Account
                 {
                     Id = userid,
                     FullName = Input.FullName,
-                    Role = Roles.Applicant,
+                    Role = Role.Applicant,
                     //Organisation = Input.Organisation,
                     UserName = Input.Email,
                     Email = Input.Email,

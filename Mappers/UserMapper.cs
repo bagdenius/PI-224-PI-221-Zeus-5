@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using DAL;
-using DAL.Entities;
+using Entities;
 using Models;
 
 namespace Mappers

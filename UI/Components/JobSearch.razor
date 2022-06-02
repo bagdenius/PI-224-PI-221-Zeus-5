@@ -1,10 +1,9 @@
-﻿@inject VacancyService jobListingService
-@inject ApplicationService joApplicationService
+﻿@inject IVacancyService jobListingService
+@inject IApplicationService joApplicationService
 @inject SignInManager<User> signInManager
 @inject UserManager<User> userManager
 
 @namespace UI.Component
-@using DAL.Entities.Enums
 @using UI.Extensions
 
 <div class="text-center" style="margin-top: 50px;">

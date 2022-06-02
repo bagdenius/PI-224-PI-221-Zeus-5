@@ -1,9 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Database;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Repositories;
 using Repositories.Abstract;
-using Microsoft.EntityFrameworkCore;
 using UnitOfWorkSpace.Abstract;
-using Database;
 
 namespace UnitOfWorkSpace
 {
@@ -15,10 +15,8 @@ namespace UnitOfWorkSpace
             services.AddTransient<IVacancyRepository, VacancyRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Resumes&Vacancies"));
-
             return services;
         }
     }

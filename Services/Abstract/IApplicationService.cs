@@ -1,6 +1,6 @@
-﻿using BLL.Models;
+﻿using Models;
 
-namespace UI.Services.Abstract
+namespace Services.Abstract
 {
     public interface IApplicationService
     {

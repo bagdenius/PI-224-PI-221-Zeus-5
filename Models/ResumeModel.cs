@@ -1,4 +1,4 @@
-﻿using DAL.Entities.Addons;
+﻿using Entities.Addons;
 using System.ComponentModel.DataAnnotations;
 
 namespace Models

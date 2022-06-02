@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DAL.Entities.Addons
+namespace Entities.Addons
 {
     public class Project
     {

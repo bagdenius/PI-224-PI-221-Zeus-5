@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using BLL.Models;
-using DAL.Entities;
+using Entities;
+using Models;
 
 namespace Mappers
 {

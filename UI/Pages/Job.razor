@@ -2,8 +2,8 @@
 @attribute [Authorize]
 @inject UserManager<User> userManager
 @inject SignInManager<User> signInManager
-@inject VacancyService jobListingService
-@inject ApplicationService jobApplicationService
+@inject IVacancyService vacancyService
+@inject IApplicationService applicationService
 
 <style>
    .cover-container{
@@ -89,12 +89,12 @@ else
         loading = true;
 
         user = (await authenticationStateTask).User;
-        job = await jobListingService.Get(jobid);
+        job = await vacancyService.Get(jobid);
 
         if (signInManager.IsSignedIn(user))
         {
             profile = await userManager.GetUserAsync(user);
-            jobApplied = jobApplicationService.CheckApplication(profile.Id, jobid);
+            jobApplied = applicationService.CheckApplication(profile.Id, jobid);
         }
 
         loading = false;
@@ -108,11 +108,10 @@ else
             VacancyId = job.Id,
             ApplicantId = profile.Id,
             Name = profile.FullName,
-            //College = profile.Organisation,
             CreationDate = DateTime.UtcNow
         };
 
-        await jobApplicationService.Add(jobApplication);
+        await applicationService.Add(jobApplication);
         jobApplied = true;
     }
 }

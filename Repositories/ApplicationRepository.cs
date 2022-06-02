@@ -1,7 +1,7 @@
 ﻿using Database;
+using Entities;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Abstract;
-using DAL.Entities;
 
 namespace Repositories
 {

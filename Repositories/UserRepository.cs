@@ -1,5 +1,5 @@
-﻿using DAL.Entities;
-using Database;
+﻿using Database;
+using Entities;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Abstract;
 

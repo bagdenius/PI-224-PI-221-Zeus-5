@@ -1,4 +1,4 @@
-﻿namespace DAL.Entities
+﻿namespace Entities
 {
     public class Vacancy
     {
@@ -10,7 +10,7 @@
         public string? Sector { get; set; }
         public string EmployerId { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.UtcNow;
-        
+
         public ICollection<Application> Applications { get; set; }
     }
 }

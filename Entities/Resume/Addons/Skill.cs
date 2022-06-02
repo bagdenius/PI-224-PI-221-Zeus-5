@@ -1,4 +1,4 @@
-﻿namespace DAL.Entities.Addons
+﻿namespace Entities.Addons
 {
     public class Skill
     {

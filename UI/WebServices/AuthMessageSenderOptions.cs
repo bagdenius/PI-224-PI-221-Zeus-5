@@ -1,4 +1,4 @@
-﻿namespace UI.Services
+﻿namespace UI.WebServices
 {
     public class AuthMessageSenderOptions
     {

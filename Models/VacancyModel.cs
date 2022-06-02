@@ -1,4 +1,4 @@
-﻿namespace BLL.Models
+﻿namespace Models
 {
     public class VacancyModel
     {
@@ -10,7 +10,7 @@
         public string Sector { get; set; }
         public string EmployerId { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.UtcNow;
-        
+
         public ICollection<ApplicationModel> Applications { get; set; }
     }
 }

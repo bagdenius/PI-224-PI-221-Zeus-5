@@ -1,8 +1,7 @@
 ﻿using Database.EntityTypeConfigurations;
-using DAL;
+using Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using DAL.Entities;
 
 namespace Database
 {

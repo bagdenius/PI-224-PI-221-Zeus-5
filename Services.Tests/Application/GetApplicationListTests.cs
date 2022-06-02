@@ -1,17 +1,15 @@
-﻿using BLL.Models;
-using BLL.Tests.Common;
-using DAL.Entities;
+﻿using BLL.Tests.Common;
+using Models;
+using Services;
 using Services.Exceptions;
 using Shouldly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using UI.Services;
 using Xunit;
 
-namespace BLL.Tests.Application
+namespace BLL.Tests.ApplicationTests
 {
     public class GetApplicationListTests : UnitOfWorkMock
     {
@@ -64,7 +62,7 @@ namespace BLL.Tests.Application
 
             // Act
             // Assert
-            await Assert.ThrowsAsync<NotFoundException>(async () => 
+            await Assert.ThrowsAsync<NotFoundException>(async () =>
             await service.FindByUserId(Guid.NewGuid().ToString()));
         }
     }

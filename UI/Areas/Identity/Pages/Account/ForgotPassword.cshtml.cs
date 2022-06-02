@@ -1,12 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Text;
-using System.Text.Encodings.Web;
-using DAL.Entities;
+﻿using Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Text.Encodings.Web;
 
 namespace UI.Areas.Identity.Pages.Account
 {
@@ -24,9 +24,9 @@ namespace UI.Areas.Identity.Pages.Account
         public InputModel Input { get; set; }
         public class InputModel
         {
-            [Display(Name ="Електронна адреса")]
-            [Required(ErrorMessage ="Введіть електронну адресу")]
-            [EmailAddress(ErrorMessage ="Електронну адресу введено некоректно")]
+            [Display(Name = "Електронна адреса")]
+            [Required(ErrorMessage = "Введіть електронну адресу")]
+            [EmailAddress(ErrorMessage = "Електронну адресу введено некоректно")]
             public string Email { get; set; }
         }
 

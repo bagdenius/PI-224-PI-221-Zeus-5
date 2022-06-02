@@ -1,5 +1,6 @@
-﻿using DAL.Entities;
-using Database;
+﻿using Database;
+using Entities;
+using Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -25,30 +26,30 @@ namespace BLL.Tests.Common
             var context = new DatabaseContext(options);
             context.Database.EnsureCreated();
             context.Users.AddRange(
-                new DAL.Entities.User
+                new User
                 {
                     Id = UserIdWithApplication,
-                    Role = Roles.Applicant,
+                    Role = Role.Applicant,
                     FullName = "FullName1",
                     IsVerified = true
                 },
-                new DAL.Entities.User
+                new User
                 {
                     Id = UserIdWithoutApplication,
-                    Role = Roles.Applicant,
+                    Role = Role.Applicant,
                     FullName = "FullName2",
                     IsVerified = true
                 },
-                new DAL.Entities.User
+                new User
                 {
                     Id = UserIdForApplicationUpdate,
-                    Role = Roles.Applicant,
+                    Role = Role.Applicant,
                     FullName = "FullName3",
                     IsVerified = true
                 });
 
             context.Vacancies.AddRange(
-                new DAL.Entities.Vacancy
+                new Vacancy
                 {
                     Id = VacancyIdForUpdate,
                     Title = "Title",
@@ -57,7 +58,7 @@ namespace BLL.Tests.Common
                     Sector = "Sector1",
                     EmployerId = UserIdWithApplication
                 },
-                new DAL.Entities.Vacancy
+                new Vacancy
                 {
                     Id = VacancyIdForApplicationUpdate,
                     Title = "Title",
@@ -66,7 +67,7 @@ namespace BLL.Tests.Common
                     Sector = "Sector2",
                     EmployerId = UserIdWithApplication
                 },
-                new DAL.Entities.Vacancy
+                new Vacancy
                 {
                     Id = VacancyIdForDelete,
                     Title = "Title3",
@@ -77,7 +78,7 @@ namespace BLL.Tests.Common
                 });
 
             context.Applications.AddRange(
-                new DAL.Entities.Application
+                new Application
                 {
                     Id = ApplicationIdForUpdate,
                     ApplicantId = UserIdWithApplication,

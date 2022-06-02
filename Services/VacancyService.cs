@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using BLL.Models;
-using DAL.Entities;
+using Entities;
+using Models;
+using Services.Abstract;
 using Services.Exceptions;
-using UI.Services.Abstract;
 using UnitOfWorkSpace.Abstract;
 
-namespace UI.Services
+namespace Services
 {
     public class VacancyService : IVacancyService
     {

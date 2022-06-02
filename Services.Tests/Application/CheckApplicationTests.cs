@@ -1,11 +1,11 @@
 ﻿using BLL.Tests.Common;
+using Services;
 using Services.Exceptions;
 using System;
 using System.Threading.Tasks;
-using UI.Services;
 using Xunit;
 
-namespace BLL.Tests.Application
+namespace BLL.Tests.ApplicationTests
 {
     public class CheckApplicationTests : UnitOfWorkMock
     {
@@ -58,7 +58,7 @@ namespace BLL.Tests.Application
 
             // Act
             // Assert
-            Assert.Throws<NotFoundException>(() => 
+            Assert.Throws<NotFoundException>(() =>
             service.CheckApplication(UserId, VacancyId));
         }
     }

@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Entities.Enums;
+using Microsoft.AspNetCore.Identity;
 
-namespace DAL.Entities
+namespace Entities
 {
     public class User : IdentityUser
     {
-        public Roles Role { get; set; }
+        public Role Role { get; set; }
 
         [PersonalData]
         public string FullName { get; set; }

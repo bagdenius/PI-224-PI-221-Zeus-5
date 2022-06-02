@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DAL.Entities.Enums
+namespace Entities.Enums
 {
     public enum EducationType
     {

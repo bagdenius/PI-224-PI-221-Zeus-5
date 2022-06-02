@@ -1,4 +1,4 @@
-﻿using DAL.Entities;
+﻿using Entities;
 
 namespace Repositories.Abstract
 {

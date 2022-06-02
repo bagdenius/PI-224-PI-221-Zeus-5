@@ -2,7 +2,7 @@
 @attribute [Authorize(Roles = "Applicant")]
 
 @inject UserManager<User> userManager
-@inject ApplicationService jobApplicationService
+@inject IApplicationService jobApplicationService
 
 <div class="text-center my-5">
     <h1 class="display-6">Ваші заяви за вакансіями</h1>

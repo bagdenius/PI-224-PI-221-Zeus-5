@@ -1,16 +1,15 @@
-﻿using BLL.Models;
-using BLL.Tests.Common;
+﻿using BLL.Tests.Common;
+using Models;
+using Services;
 using Services.Exceptions;
 using Shouldly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using UI.Services;
 using Xunit;
 
-namespace BLL.Tests.Vacancy
+namespace BLL.Tests.VacancyTests
 {
     public class GetVacancyListTests : UnitOfWorkMock
     {
