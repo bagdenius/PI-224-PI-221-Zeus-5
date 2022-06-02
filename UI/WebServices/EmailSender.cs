@@ -21,10 +21,11 @@ namespace UI.Services
 
         public Task Execute(string apiKey, string subject, string message, string email)
         {
+            apiKey = "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";
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress(Options.SendGridUser),
+                From = new EmailAddress("bagdensparrow@gmail.com", "Zeus team"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message

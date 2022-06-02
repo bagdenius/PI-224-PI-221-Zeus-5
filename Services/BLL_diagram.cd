@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Mappers.ApplicationMapper">
+    <Position X="10.5" Y="0.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Mappers.ResumeMapper">
+    <Position X="12.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Mappers.UserMapper">
+    <Position X="8.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Mappers.VacancyMapper">
+    <Position X="14.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="BLL.Models.ApplicationModel">
+    <Position X="3.25" Y="0.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="BLL.Models.VacancyModel">
+    <Position X="0.75" Y="4" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Models.ResumeModel">
+    <Position X="1" Y="0.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Models.UserModel">
+    <Position X="5.5" Y="0.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Services.Exceptions.NotFoundException">
+    <Position X="3.25" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\NotFoundException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.Services.ApplicationService" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="4.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAYECAAAAAAAAABAAgABAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>ApplicationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UI.Services.VacancyService" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="4.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AEYAAAAAAAAAAABAAgABBAAAAAAAAAAAAAAAAAAgCAA=</HashCode>
+      <FileName>VacancyService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Services.DependencyInjection">
+    <Position X="16.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DependencyInjection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="UI.Services.Abstract.IApplicationService" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYECAAAAAAAAABAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Abstract\IApplicationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UI.Services.Abstract.IVacancyService" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAAAAAAAAAAABAAgAABAAAAAAAAAAAAAAAAAAgCAA=</HashCode>
+      <FileName>Abstract\IVacancyService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

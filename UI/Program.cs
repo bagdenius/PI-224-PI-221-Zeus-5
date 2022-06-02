@@ -35,8 +35,6 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<User>>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddScoped<VacancyService>();
-builder.Services.AddScoped<ApplicationService>();
 
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 

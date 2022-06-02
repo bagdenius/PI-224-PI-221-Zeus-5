@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Database.EntityTypeConfigurations.UserConfiguration">
+    <Position X="12.75" Y="7.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Database.EntityTypeConfigurations.VacancyConfiguration">
+    <Position X="10.5" Y="7.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Database.DatabaseContext">
+    <Position X="8.25" Y="7.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Database.DatabaseSeeder">
+    <Position X="14.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Addons.Education">
+    <Position X="3.25" Y="7" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Addons.Experience">
+    <Position X="7" Y="10.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Addons.Project">
+    <Position X="5" Y="10.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Addons.Skill">
+    <Position X="3.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Enums.EducationType" Collapsed="true">
+    <Position X="5.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Enums.MarkType" Collapsed="true">
+    <Position X="5.25" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Enums.Sector" Collapsed="true">
+    <Position X="3.25" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Resume">
+    <Position X="0.75" Y="7" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Roles" Collapsed="true">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.User">
+    <Position X="0.75" Y="3.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Application">
+    <Position X="0.75" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Entities.Vacancy">
+    <Position X="3.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Repositories.ApplicationRepository" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="4.75" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Repositories.UserRepository" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="4.75" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Repositories.VacancyRepository" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UnitOfWorkSpace.DependencyInjection">
+    <Position X="6.25" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>DependencyInjection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnitOfWorkSpace.UnitOfWork" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QAIAACAAADAABAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Repositories.Abstract.IApplicationRepository" Collapsed="true">
+    <Position X="10.25" Y="4" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Repositories.Abstract.IUserRepository" Collapsed="true">
+    <Position X="13.25" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Repositories.Abstract.IVacancyRepository" Collapsed="true">
+    <Position X="7.5" Y="4" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="UnitOfWorkSpace.Abstract.IUnitOfWork" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAACAAABAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract\IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
