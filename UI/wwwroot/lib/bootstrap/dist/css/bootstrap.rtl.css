@@ -54,7 +54,7 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
+  --bs-body-color: #d4d4d4;
   --bs-body-bg: #fff;
 }
 
@@ -2949,7 +2949,7 @@ textarea.form-control-lg {
   }
 }
 .btn:hover {
-  color: #212529;
+  color: #d4d4d4;
 }
 .btn-check:focus + .btn, .btn:focus {
   outline: 0;

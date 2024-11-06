@@ -24,7 +24,8 @@
     @(await Html.RenderComponentAsync<Footer>(RenderMode.ServerPrerendered))
 
     <script src="~/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="~/js/lottie/dist/lottie-player.js"></script>
+    @* <script src="~/js/lottie/dist/lottie-player.js"></script> *@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/2.0.4/lottie-player.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
